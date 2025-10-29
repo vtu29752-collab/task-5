@@ -1,0 +1,28 @@
+# Function to return sorted squares of a sorted array
+def sortedSquares(nums):
+    n = len(nums)
+    res = [0] * n  # Result list
+    l, r = 0, n - 1
+    pos = n - 1    # Position to fill from rightmost end
+
+    while l <= r:
+        if abs(nums[l]) > abs(nums[r]):
+            res[pos] = nums[l] ** 2
+            l += 1
+        else:
+            res[pos] = nums[r] ** 2
+            r -= 1
+        pos -= 1
+
+    return res
+
+
+# ---- Main Program ----
+# Read input as space-separated integers
+nums = list(map(int, input("Enter sorted numbers separated by spaces: ").split()))
+
+# Get the result
+result = sortedSquares(nums)
+
+# Print output
+print("Sorted squares:", result)
