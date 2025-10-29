@@ -1,0 +1,17 @@
+# Bubble Sort in Python
+
+# Step 1: Read number of elements
+n = int(input("Enter number of elements: "))
+
+# Step 2: Read elements into a list
+arr = list(map(int, input("Enter the elements separated by spaces: ").split()))
+
+# Step 3: Bubble Sort Algorithm
+for i in range(n - 1):
+    for j in range(n - i - 1):
+        if arr[j] > arr[j + 1]:
+            # Swap if elements are in the wrong order
+            arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+# Step 4: Print the sorted list
+print("Sorted list:", arr)
