@@ -1,0 +1,25 @@
+# Program to find peak elements in a list
+
+# Step 1: Read number of elements
+n = int(input("Enter number of elements: "))
+
+# Step 2: Read list elements
+A = list(map(int, input("Enter elements: ").split()))
+
+# Step 3: Initialize list to store peak elements
+peaks = []
+
+# Step 4: Traverse the array to find peaks
+for i in range(n):
+    # For first element
+    if i == 0 and n > 1 and A[i] >= A[i + 1]:
+        peaks.append(A[i])
+    # For last element
+    elif i == n - 1 and A[i] >= A[i - 1]:
+        peaks.append(A[i])
+    # For middle elements
+    elif 0 < i < n - 1 and A[i] >= A[i - 1] and A[i] >= A[i + 1]:
+        peaks.append(A[i])
+    # For single-element list (special case)
+    elif n == 1:
+        peaks.append(
